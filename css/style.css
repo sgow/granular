@@ -1,0 +1,183 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+body {
+  font-family: "lato", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #24292d;
+  text-align: center;
+}
+
+header {
+  background: url(../images/mountain.jpg) center no-repeat;
+  background-size: cover;
+  /*To make our header the height of our browser window, whichever size it may be, we use 100vh - or viewport height. We also have vw - viewport width.*/
+  height: 100vh;
+}
+
+h1 {
+  /*position absolute allow us to move an element away from it's normal position.*/
+  position: absolute;
+  /*To move the logo into the middle of the page, first set top 50% and left 50%. We then need to adjust the positioning as elements are moved from their top left co-ordinates.*/
+  top: 50%;
+  left: 50%;
+  /*To get the image into the middle we need to move it half of its width and half of its height, so check your image size and adjust accordingly.*/
+  margin: -132px 0 0 -250px;
+}
+
+header a {
+  position: absolute;
+  bottom: 40px;
+}
+
+.intro {
+  background-color: #e0e3e6;
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.feature {
+  padding: 60px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.feature a {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#blue-lagoon {
+  background-image: url(../images/blue-lagoon.jpg)
+}
+
+#pool {
+  background-image: url(../images/pool.jpg);
+}
+
+#forest {
+  background-image: url(../images/forest.jpg);
+}
+
+#boat {
+  background-image: url(../images/boat.jpg);
+}
+
+#river {
+  background-image: url(../images/river.jpg);
+}
+
+.scroll-effect {
+  background: center no-repeat;
+  background-size: cover;
+  height: 100vh;
+  /*Create window scroll effect where images look fixed in place and scroll over one another*/
+  background-attachment: fixed;
+  position: relative;
+}
+
+h3 {
+  color: #fff;
+  font-size: 42px;
+  text-transform: uppercase;
+  font-weight: 300;
+  /*position absolute and position fixed, when applied to elements defaults their position to the top of the browser window. To change this we need to say where we want to position these elements relative to. Here we want to position within their sections, so must apply position: relative to the scroll-effect class.*/
+  position: absolute;
+  bottom: 20px;
+  /*When using position absolute or fixed, we lose the default width of our elements. To get text-align: center working again, we reset the width to 100%*/
+  width: 100%;
+}
+
+.subscribe {
+  background-color: #f3f4f5;
+  padding: 50px 0;
+}
+
+form {
+  /*to be able to set the inputs to 60% we first have to set the form to 100%*/
+  width: 100%;
+}
+
+input {
+  width: 60%;
+  padding: 8px;
+  border: 2px solid #24292d;
+  outline: none;
+  text-align: center;
+  margin: 10px 0;
+
+  /*Transitions allow us to animate css properties. Here we want the border colour to gradually change from grey to green. You must apply the transition property to the normal state. Transitions take three values, the property you want to change (ie. border color), the duration and the timing-function (ie.easing)*/
+
+  /*any longer than 0.5 seconds can give the impression of a slow connection so it is always best to get it under this amount.*/
+
+  /*If transitioning more than one property at a time, use 'all' to transition between states.*/
+  transition: border-color 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+input:focus {
+  border-color: #16b898;
+}
+
+/*Make sure there are no spaces between input and the square brackets.*/
+input[type="submit"] {
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  border-color: #16b898;
+  width: 70%;
+}
+
+footer {
+  padding: 50px 0;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+footer a {
+  text-decoration: none;
+  color: #24292d;
+  margin: 0 10px;
+}
+
+small {
+  color: #e0e3e6;
+}
+
+
+@media screen and (max-width:860px) {
+  h1 {
+    /*reset the h1 to sit where it was originally found, within the flow of the page.*/
+    position: static;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .subscribe, .intro, .feature {
+    padding: 20px;
+  }
+
+  input {
+    width: 80%;
+  }
+  input[type="submit"]:hover{
+    width: 90%;
+  }
+
+
+
+
+}
